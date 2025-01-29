@@ -1,0 +1,553 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: #f1b401;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+img {
+  margin-left: 2%;
+  width: 35%;
+  cursor:pointer;
+  background-repeat: no-repeat;
+}
+
+/* =============== Navigation ================ */
+.navigation img {
+  border-radius: 50%;
+  width: 50%;
+}
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--orange);
+  border-left: 10px solid var(--orange);
+  transition: 0.5s;
+  overflow: hidden;
+}
+.navigation.active {
+  width: 80px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+  background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+.navigation ul li img {
+    position: relative;
+    margin-top:10%;
+  margin-left: 23%;
+    display: flex;
+   
+  }
+.navigation ul li a  {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+  color: var(--orange);
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+.navigation ul li a .icon ion-icon {
+  font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+/* --------- curve outside ---------- */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+/* ===================== Main ===================== */
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.cardspace{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.cards{
+  width: 70%;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 20px;
+border-radius: 20px;
+  background-color: #2a2185;
+  height: 200px;
+  padding: 0%;
+}
+
+.card_body{
+  width: 100%;
+  height: 180px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: #f1b401;
+  text-align: center;
+ 
+
+}
+.card_bottom{
+  position: relative;
+  width: 100%;
+  margin: 0;
+  height: 40px;
+  border-bottom-right-radius: 17px ;
+  border-bottom-left-radius: 17px ;
+
+  background-color: rgb(255, 213, 0);
+
+}
+/*===================cards=============*/
+.company-box {
+  background-color: #f1b401;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 80%;
+
+  padding: 15px;
+  margin-left: 5%;
+  margin-right: 5%;
+  position: relative;
+  margin-bottom: 20px;
+}
+.company-box:hover + .details{
+  display: block;
+}
+.company{
+  display: flex;
+  justify-content: left;
+}
+.contenu{
+  padding-left: 5%;
+}
+.company-box h2 {
+  margin: 10px 0 15px;
+}
+.entr{
+  align-items: center;
+  width: 15%;
+  height: 121px;
+  border-radius: 80px;
+  box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.48);
+-webkit-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.48);
+-moz-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.48);
+}
+.Postuler {
+height: 50px; 
+width: 270px;
+background-color: white;
+color: #f1b401;
+border-color: white;
+border-radius: 15px 15px 15px 15px;
+font-size: 18px;
+font-weight: bolder;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+letter-spacing: 1px;
+outline: none;
+box-shadow: 0px 3px 10px rgb(251, 255, 0);
+cursor: pointer;
+transition: all 0.3s ease;
+margin-top: 14%;
+}
+#Button {
+  position: absolute;
+  right: 10%;
+}
+.arrow {
+  position: absolute;
+  top: 40%;
+  right: 5%;
+  width: 30px;
+  height: 30px;
+  border-style: solid;
+  border-width: 20px 0 20px 20px;
+  border-color: transparent transparent transparent rgba(37, 35, 35, 0.893);
+  cursor: pointer;
+}
+.arrow2 {
+  position: absolute;
+  top: 40%;
+  right: 5%;
+  width: 30px;
+  height: 30px;
+  border-style: solid;
+  border-width: 20px 0 20px 20px;
+  border-color: transparent transparent transparent rgba(37, 35, 35, 0.893);
+  cursor: pointer;
+}
+.arrow.show {
+  top: 13%;
+  transform: rotate(90deg);
+}
+.arrow.show +.details.show{
+  display: block;
+}
+.details {
+  display: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-top: 1px solid black;
+}
+
+/*================condidatur demeandeur============*/
+.Accepté,.Attente,.Réfusé {
+  height: 50px; 
+  width: 270px;
+
+  color: rgb(0, 0, 0);
+ 
+  border-radius: 15px 15px 15px 15px;
+  font-size: 18px;
+  font-weight: bolder;
+  font-family: arial;
+  letter-spacing: 1px;
+  outline: none;
+  font-size: 17px;
+  text-shadow: 0px 0px 1px #000000;
+  margin-top: 14%;
+  }
+  .Accepté{
+    background-color: rgb(42, 246, 6);
+  }
+  .Réfusé{
+    background-color: rgb(246, 38, 6);
+  }
+  .Attente{
+    background-color: rgb(126, 127, 126);
+  }
+/*==================ajout emploi=============================*/
+.container2 {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.container2 header {
+  font-size: 1.5rem;
+  color: #f1b401;;
+  font-weight: bold;
+  text-align: center;
+}
+.container2 .form {
+  margin-top: 30px;
+}
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.input-box label {
+  color: #333;
+}
+.form :where(.input-box input ,.input-box textarea, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline:none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+.input-box textarea{
+  height: 150px;
+  resize: none;
+}
+
+
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+}
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #f1b401;
+  border-radius: 8px;
+}
+.checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-around;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding:15px;
+  margin-top: 8px;
+  outline:none;
+  font-size: 1rem;
+  color: #707070;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  padding-left: 50px;
+  position: relative;
+  font-size: 1rem;
+  color: #707070
+}
+
+.checkbox-container input[type="checkbox"] {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+}
+/*======================myoffre_employeur=================*/
+.condiico{
+  position: absolute;
+  top: 40%;
+  right: 5%;
+   width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.delico:where( ion-icon):hover{
+color: red;
+}
+
+.delico {
+  position: absolute;
+  top: 40%;
+  right: 5%;
+   width: 30px;
+    height: 30px;
+  cursor: pointer;
+    
+}
+#iconsdelcon{
+  position: absolute;
+  right: 13%;
+  top: 58px;
+}
+#iconsdelcon2{
+
+  position: absolute;
+  right: 20%;
+  top: 58px;
+}
+/* 
+====================== Responsive Design ========================== */
+@media (max-width: 991px) {
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    left: 300px;
+  }
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .recentOrders {
+    overflow-x: auto;
+  }
+  .status.inProgress {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+
+  .navigation.active {
+    width: 100%;
+    left: 0;
+    
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
+}
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+
+}
